@@ -17,7 +17,7 @@ public class AddingProductsSteps {
     @Given("an empty shopping cart")
     public void anEmptyShoppingCart() {
         cartManager = new CartManager();
-        cartManager.clearCart();
+        cartManager.clearShoppingCart();
     }
 
     @When("I add {int} item {string} with a price of {int}")

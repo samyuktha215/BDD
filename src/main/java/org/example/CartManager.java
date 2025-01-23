@@ -1,32 +1,37 @@
 package org.example;
 
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.Map;
+import java.util.Set;
 
 public class CartManager {
-    private final Map<String,Integer>shoppingCart;
-    private int totalPrice;
+    private Cart cart;
 
     public CartManager() {
-        shoppingCart = new HashMap<>();
-        totalPrice=0;
+        this.cart = new Cart();
     }
 
     public int getTotalPrice() {
-       return totalPrice;
+       return cart.getTotalPrice();
     }
 
     public void addItem(String item, int quantity,int price) {
-        shoppingCart.put(item,quantity*price);
-        totalPrice+=quantity*price;
+        cart.addItem(item,quantity,price);
+    }
+
+    public void removeItem(String itemName) {
+        cart.removeItem(itemName);
     }
 
     public Map<String,Integer> getShoppingCartContents() {
-        return new HashMap<>(shoppingCart);
+        return cart.getItems();
     }
 
-    public void clearCart(){
-        shoppingCart.clear();
-        totalPrice=0;
+    public void clearShoppingCart() {
+        cart.clearItems();
     }
+
+
+
 }
