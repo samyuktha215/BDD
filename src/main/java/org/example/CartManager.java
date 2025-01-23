@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class CartManager {
     private final Map<String,Integer>shoppingCart;
-    private int totalPrice=0;
+    private int totalPrice;
 
     public CartManager() {
         shoppingCart = new HashMap<>();
@@ -13,8 +13,9 @@ public class CartManager {
     }
 
     public int getTotalPrice() {
-        return totalPrice;
+       return totalPrice;
     }
+
     public void addItem(String item, int quantity,int price) {
         shoppingCart.put(item,quantity*price);
         totalPrice+=quantity*price;
