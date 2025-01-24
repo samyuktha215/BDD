@@ -2,23 +2,36 @@ package org.example;
 
 public class Item {
     private String itemName;
-    private int quantity;
+    private int Quantity;
     private int price;
 
     public Item(String itemName, int quantity, int price) {
         this.itemName = itemName;
-        this.quantity = quantity;
+        Quantity = quantity;
         this.price = price;
     }
+
     public String getItemName() {
         return itemName;
     }
 
     public int getQuantity() {
-        return quantity;
+        return Quantity;
     }
 
     public void setQuantity(int quantity) {
-        this.quantity = quantity;
+        Quantity = quantity;
+    }
+    public int getPrice() {
+        return price;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "itemName='" + itemName + '\'' +
+                ", Quantity=" + Quantity +
+                ", price=" + price +
+                '}';
     }
 }
